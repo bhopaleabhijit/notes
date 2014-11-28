@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Show Hide Using Selectbox</title>
+<style type="text/css">
+    .box{
+        padding: 20px;
+        display: none;
+        margin-top: 20px;
+        border: 1px solid #000;
+    }
+    .red{ background: #ff0000; }
+    .green{ background: #00ff00; }
+    .blue{ background: #0000ff; }
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("select").change(function(){
+            $( "select option:selected").each(function(){
+                if($(this).attr("value")=="red"){
+                    $(".box").hide();
+                    $(".red").show();
+                }
+                if($(this).attr("value")=="green"){
+                    $(".box").hide();
+                    $(".green").show();
+                }
+                if($(this).attr("value")=="blue"){
+                    $(".box").hide();
+                    $(".blue").show();
+                }
+            });
+        }).change();
+    });
+</script>
+</head>
